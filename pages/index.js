@@ -1,118 +1,117 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Head from "next/head"
+import { useState } from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    '/img1.jpg',
+    '/image2.jpg',
+    '/image3.png',
+    '/img4.jpeg',
+  ];
+
+  const handlePrevClick = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
+  };
+
+  const handleNextClick = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
+  };
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+   <div>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="description" content="Real time data aggregation" />
+        <title>Umeed</title>
+      </Head>
+      {/* banner code */}
+      <div className="bg-red-600 text-white py-2 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-red-700 opacity-50"></div>
+        <div className="whitespace-nowrap animate-marquee">
+          <span className="px-6">📞 Police Helpline: 100</span>
+          <span className="px-6">🚨 NDRF: 011-2342 4099</span>
+          <span className="px-6">🚑 Rapid Response Team: 108</span>
+          <span className="px-6">🌟  "Prepared for the Unexpected"</span>
+          <span className="px-6">📞 Police Helpline: 100</span>
+          <span className="px-6">🚑 Rapid Response Team: 108</span>
         </div>
       </div>
+      {/* //slider wala code */}
+      <div className="relative w-full max-w-4xl mx-auto">
+      {/* Slider Container */}
+      <div className="relative overflow-hidden rounded-lg" style={{ height: '400px' }}>
+        <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)`, height: '100%'  }}>
+          {slides.map((slide, index) => (
+            <div key={index} className="w-full flex-shrink-0" style={{ height: '100%' }}>
+              <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-full object-cover"  style={{ height: '100%' }}/>
+            </div>
+          ))}
+        </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+        {/* Prev Button */}
+        <button
+          onClick={handlePrevClick}
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md focus:outline-none"
+        >
+          &#10094;
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={handleNextClick}
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md focus:outline-none"
+        >
+          &#10095;
+        </button>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* Indicator Dots */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-blue-500' : 'bg-gray-300'}`}
+          ></button>
+        ))}
       </div>
-    </main>
-  );
+       </div>
+    {/* //feedback */}
+     <section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div class="h-full text-center">
+          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="p3.jpeg"/>
+          <p class="leading-relaxed">"Working with the disaster response team has been an incredible experience. Their dedication, quick response times, and ability to adapt to rapidly changing situations are unmatched. They not only provide immediate relief but also offer long-term support to affected communities. Their professionalism and compassion make them a crucial part of disaster management efforts."</p>
+          <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HOLDEN CAULFIELD</h2>
+          <p class="text-gray-500"> Disaster Response Coordinator</p>
+        </div>
+      </div>
+      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div class="h-full text-center">
+          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/p1.jpeg"/>
+          <p class="leading-relaxed">"The disaster response team consistently demonstrates exceptional skill and coordination during critical situations. Their efficiency in mobilizing resources and managing operations on the ground has greatly enhanced our ability to provide timely medical assistance and support. Their teamwork and resilience make a significant difference in the lives of those affected by disasters."</p>
+          <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">ALPER KAMU</h2>
+          <p class="text-gray-500">Emergency Medical Technician</p>
+        </div>
+      </div>
+      <div class="lg:w-1/3 lg:mb-0 p-4">
+        <div class="h-full text-center">
+          <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/p2.jpeg"/>
+          <p class="leading-relaxed">"As a volunteer working alongside the disaster response team, I've witnessed firsthand their commitment to making a positive impact. They go above and beyond to ensure that help reaches those in need swiftly and effectively. Their expertise and dedication are vital in coordinating relief efforts and supporting affected communities through challenging times."</p>
+          <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+          <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
+          <p class="text-gray-500">Volunteer Field Officer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+        </section>
+   </div>
+  )
 }
