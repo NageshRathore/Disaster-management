@@ -27,7 +27,7 @@ export default function Home() {
         <title>Umeed</title>
       </Head>
       {/* banner code */}
-      <div className="bg-red-600 text-white py-2 relative overflow-hidden">
+      <div className="bg-red-600 text-white py-2 z-index: 10; relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-red-700 opacity-50"></div>
         <div className="whitespace-nowrap animate-marquee">
           <span className="px-6">📞 Police Helpline: 100</span>
