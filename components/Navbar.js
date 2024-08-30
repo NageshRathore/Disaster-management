@@ -56,7 +56,10 @@ const Navbar = () => {
             <Link href="/#" legacyBehavior>
               <a className="mr-5 text-slate-900 hover:text-zinc-50">Dashboard</a>
             </Link>
-            <Link href="/#" legacyBehavior>
+            <Link href="/missingperson" legacyBehavior>
+              <a className="mr-5 text-slate-900 hover:text-zinc-50">Missing Person</a>
+            </Link>
+            <Link href="/donation" legacyBehavior>
               <a className="mr-5 text-slate-900 hover:text-zinc-50">Donate</a>
             </Link>
           </nav>
