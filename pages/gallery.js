@@ -3,7 +3,7 @@ import React from 'react'
 const gallery = () => {
   return (
     <div>
-      <section class="text-gray-600 body-font">
+      <section class="text-gray-600 body-font bg-red-400">
   <div class="container px-5 py-24 mx-auto flex flex-wrap">
     <div class="flex w-full mb-20 flex-wrap">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-white lg:w-1/3 lg:mb-0 mb-4">Gallery of Disaster Management Efforts</h1>
