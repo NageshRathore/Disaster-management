@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [articles, setArticles] = useState({})
+
   const slides = [
     '/img1.jpg',
     '/image2.jpg',
@@ -92,6 +94,40 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* NewsAPI */}
+                
+      <section className='mt-9'>  
+      <div className="bg-white p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Disasters related News</h2>
+      {articles.length > 0 ? (
+        <ul className="space-y-4">
+          {articles.map((article, id) => (
+            <li key={id} className="flex items-start">
+              {article.urlToImage && (
+                <img
+                  src={article.urlToImage}
+                  alt={article.title}
+                  className="w-24 h-24 object-cover mr-4 rounded-lg"
+                />
+              )}
+              <div>
+                <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-blue-600 hover:underline">
+                  {article.title}
+                </a>
+                <p className="text-sm text-gray-600 mt-1">
+                  {article.description ? article.description : 'No description available.'}
+                </p>
+                <p className="text-xs text-gray-500 mt-2">{new Date(article.publishedAt).toLocaleDateString()}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-gray-600">Loading news...</p>
+      )}
+    </div>
+    </section>  
 
       {/* Testimonials */}
       <section className="text-gray-600 body-font">
