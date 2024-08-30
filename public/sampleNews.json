@@ -1,0 +1,58 @@
+{
+    "articles": [
+     
+      {
+        "source": {
+          "id": "cnn",
+          "name": "CNN"
+        },
+        "author": "Ivana Scatola",
+        "title": "Oil tanker appears to be leaking oil following Houthi attack, says Pentagon | CNN",
+        "description": "According to the Pentagon, a Greek-flagged oil tanker carrying “approximately 1 million barrels of crude oil” is leaking into the Red Sea, presenting a “navigational hazard and a potential environmental catastrophe.” Yemeni Houthi rebels targeted the vessel w…",
+        "url": "https://www.cnn.com/2024/08/28/world/video/oil-tanker-red-sea-houthi-attack-lon-digvid",
+        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/wide-v2-clean-00-00-06-23-still001.jpg?c=16x9&q=w_800,c_fill",
+        "publishedAt": "2024-08-28T13:52:37.658Z",
+        "content": "According to the Pentagon, a Greek-flagged oil tanker carrying approximately 1 million barrels of crude oil is leaking into the Red Sea, presenting a navigational hazard and a potential environmental… [+143 chars]"
+      },
+      {
+        "source": {
+          "id": "reuters",
+          "name": "Reuters"
+        },
+        "author": "Debora Ely",
+        "title": "Brazilian family left homeless by floods finds refuge under road bridge",
+        "description": "Four months after devastating flooding wrecked their house in southern Brazil, Milton do Nascimento and his family still have no permanent home and are sleeping rough under a highway bridge.",
+        "url": "https://www.reuters.com/world/americas/brazilian-family-left-homeless-by-floods-finds-refuge-under-road-bridge-2024-08-29/",
+        "urlToImage": "https://www.reuters.com/resizer/v2/A42EN7DFWBKJJBCMDTD7VRVUOQ.jpg?auth=50e856055f344f0c56a53ea888ce5012dbfe2a097ef229b16fc008f1808d7547&height=1005&width=1920&quality=80&smart=true",
+        "publishedAt": "2024-08-29T13:49:15Z",
+        "content": null
+      },
+      {
+        "source": {
+          "id": "abc-news-au",
+          "name": "ABC News (AU)"
+        },
+        "author": "ABC News",
+        "title": "Thousands evacuated as monsoon rains and flooding kill 28 people in India",
+        "description": "Almost 2,000 people have been rescued, with the army deployed to assist with relief efforts.",
+        "url": "https://www.abc.net.au/news/2024-08-29/india-pakistan-floods-kill-dozens-in-gujarat-state/104288560",
+        "urlToImage": "https://live-production.wcms.abc-cdn.net.au/2ba00b016f0b262047ecb708b21dd67f?impolicy=wcms_watermark_news&cropH=2810&cropW=4996&xPos=2&yPos=0&width=862&height=485&imformat=generic",
+        "publishedAt": "2024-08-29T12:57:26Z",
+        "content": "Heavy rains have battered India and Pakistan's coastal areas, flooding cities in India's Gujarat state and forcing thousands from their homes.\r\nIntense monsoon rains and floods have killed at least 2… [+1216 chars]"
+      },
+      {
+        "source": {
+          "id": "time",
+          "name": "Time"
+        },
+        "author": "Associated Press",
+        "title": "Wild Week of U.S. Weather Includes Heat Wave, Tropical Storm, Snow, and More",
+        "description": "Many parts of the country have faced everything from heat waves to snowstorms to flash floods.",
+        "url": "http://time.com/7015078/extreme-weather-us/",
+        "urlToImage": "https://api.time.com/wp-content/uploads/2024/08/AP24239689714794.jpg?quality=85&w=1024&h=628&crop=1",
+        "publishedAt": "2024-08-27T12:19:04Z",
+        "content": "FALCON HEIGHTS, Minn. It's been a wild week of weather in many parts of the United States, from heat waves to snowstorms to flash floods.\r\nHere's a look at some of the weather events:\r\nMidwest sizzle… [+3870 chars]"
+      }
+    ]
+  }
+  

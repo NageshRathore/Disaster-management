@@ -46,14 +46,10 @@ export default function MissingPerson() {
   };
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
-      <Head>
-        <title>Report Missing Person</title>
-        <meta name="description" content="Report a missing person and provide details for assistance." />
-      </Head>
-
+   
       {/* Hero Section */}
-      <section className="bg-red-600 text-white py-8">
-        <div className="container mx-auto text-center">
+      <section className="bg-red-600 mt-4 text-white py-8">
+        <div className="container mx-auto  text-center">
           <h1 className="text-4xl font-bold">Report a Missing Person</h1>
           <p className="text-lg mt-4">Please provide all necessary details to help us assist in locating the missing person.</p>
         </div>

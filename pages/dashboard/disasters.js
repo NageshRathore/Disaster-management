@@ -1,12 +1,29 @@
 // pages/dashboard/disasters.js
 import DashboardLayout from '../../components/DashboardLayout';
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
+
+
 
 const Disasters = () => {
+  const [tweets, setTweets] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/twitter');
+        const data = await response.json();
+        setTweets(data.data || []);
+      } catch (error) {
+        console.error('Error fetching tweets:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <DashboardLayout>
       <div className="min-h-screen p-6">
-        <h1 className="text-4xl font-bold text-red-500 mb-6">Recent Disasters in India</h1>
+        <h1 className="text-4xl font-bold text-red-500 mb-6"> Recent Disasters in India</h1>
         <div className="mb-4">
           <img src="/cyclone.jpg" alt="Cyclone Mocha" className="w-full mb-4" />
           <p>

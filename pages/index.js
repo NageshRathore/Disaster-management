@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [articles, setArticles] = useState({})
-
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
   const slides = [
     '/img1.jpg',
     '/image2.jpg',
@@ -19,6 +19,27 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [slides.length]);
+
+
+  useEffect(() => {
+    async function fetchArticles() {
+      try {
+        const response = await fetch('/sampleNews.json');
+        console.log(response);
+        const data = await response.json();
+        setArticles(data.articles || []);
+        console.log(articles);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchArticles();
+  }, []);
+
+
 
   const handlePrevClick = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
@@ -94,40 +115,104 @@ export default function Home() {
           ))}
         </div>
       </div>
+   
+      
+      <section class="text-gray-600 body-font bg-white">
+  <div class="container px-5 py-24 mx-auto">
+    <h1 class="text-center text-red-600 text-3xl font-bold mb-12">Work Flow</h1>
+    
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-red-300 sm:flex-row flex-col">
+      <div class="sm:w-24 sm:h-24 h-16 w-16 sm:mr-6 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 flex-shrink-0">
+        <img src="prepare.webp" alt="" class="w-full h-full object-cover rounded-full"/>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-red-600 text-lg title-font font-bold mb-2">Preparation and Planning</h2>
+        <p class="leading-relaxed text-base"><strong>Develop Plans: </strong> Create and regularly update disaster response plans, including evacuation routes, resource allocation, and communication strategies.</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-red-300 sm:flex-row flex-col">
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-red-600 text-lg title-font font-bold mb-2">Activation and Mobilization</h2>
+        <p class="leading-relaxed text-base"><strong>Receive Alert: </strong> Respond to disaster alerts and assess the situation based on available information.</p>
+        <p class="leading-relaxed text-base"><strong>Mobilize Resources: </strong> Deploy team members, equipment, and resources to the affected area. Establish command centers and communication lines.</p>
+      </div>
+      <div class="sm:w-24 sm:h-24 h-16 w-16 sm:ml-6 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 flex-shrink-0">
+        <img src="alert.webp" alt="" class="w-full h-full object-cover rounded-full"/>
+      </div>
+    </div>
+    
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-red-300 sm:flex-row flex-col">
+      <div class="sm:w-24 sm:h-24 h-16 w-16 sm:mr-6 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 flex-shrink-0">
+        <img src="response.webp" alt="" class="w-full h-full object-cover rounded-full"/>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-red-600 text-lg title-font font-bold mb-2">Response and Recovery</h2>
+        <p class="leading-relaxed text-base"><strong>Immediate Response: </strong> Provide emergency aid, including medical care, shelter, and food distribution. Prioritize search and rescue operations.</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-red-300 sm:flex-row flex-col">
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-red-600 text-lg title-font font-bold mb-2">Evaluation and Improvement</h2>
+        <p class="leading-relaxed text-base"><strong>Post-Disaster Review: </strong> Conduct a thorough review of the response efforts, identifying successes and areas for improvement.</p>
+        <p class="leading-relaxed text-base"><strong>Update Plans: </strong> Revise disaster response plans based on lessons learned and ensure ongoing training and preparedness.</p>
+      </div>
+      <div class="sm:w-24 sm:h-24 h-16 w-16 sm:ml-6 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 flex-shrink-0">
+        <img src="re.jpg" alt="" class="w-full h-full object-cover rounded-full"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
       {/* NewsAPI */}
-                
       <section className='mt-9'>  
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Disasters related News</h2>
-      {articles.length > 0 ? (
-        <ul className="space-y-4">
+  <div className="bg-white p-6 rounded-lg shadow-lg">
+    <h2 className="text-2xl font-bold mb-4 text-center text-red-500">Related News</h2>
+    {!loading ? (
+      articles.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {articles.map((article, id) => (
-            <li key={id} className="flex items-start">
-              {article.urlToImage && (
+            <div key={id} className="flex flex-col bg-white p-4 rounded-lg shadow-md">
+              {article.urlToImage ? (
                 <img
                   src={article.urlToImage}
                   alt={article.title}
-                  className="w-24 h-24 object-cover mr-4 rounded-lg"
+                  className="w-full h-48 object-cover rounded-t-lg"
                 />
+              ) : (
+                <div className="w-full h-48 bg-gray-200 rounded-t-lg"></div>
               )}
-              <div>
+              <div className="p-2">
                 <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-blue-600 hover:underline">
                   {article.title}
                 </a>
                 <p className="text-sm text-gray-600 mt-1">
                   {article.description ? article.description : 'No description available.'}
                 </p>
-                <p className="text-xs text-gray-500 mt-2">{new Date(article.publishedAt).toLocaleDateString()}</p>
+                <p className="text-xs text-gray-500 mt-2">
+                  {new Date(article.publishedAt).toString() !== 'Invalid Date'
+                    ? new Date(article.publishedAt).toLocaleDateString()
+                    : 'Date not available'}
+                </p>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
-        <p className="text-gray-600">Loading news...</p>
-      )}
-    </div>
-    </section>  
+        <p className="text-gray-600">No news available.</p>
+      )
+    ) : (
+      <p className="text-gray-600">Loading news...</p>
+    )}
+  </div>
+</section>
+
 
       {/* Testimonials */}
       <section className="text-gray-600 body-font">
