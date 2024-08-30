@@ -1,4 +1,6 @@
+// components/Sidebar.js
 import React from 'react';
+import Link from 'next/link';
 
 const Sidebar = () => {
   return (
@@ -7,19 +9,29 @@ const Sidebar = () => {
       <nav>
         <ul className="list-none p-0">
           <li className="mb-2">
-            <a href="/dashboard" className="hover:text-gray-400">Dashboard</a>
+            <Link href="/dashboard" legacyBehavior>
+              <a className="hover:text-gray-400">Dashboard</a>
+            </Link>
           </li>
           <li className="mb-2">
-            <a href="/disasters" className="hover:text-gray-400">Disasters</a>
+            <Link href="/dashboard/disasters" legacyBehavior>
+              <a className="hover:text-gray-400">Disasters</a>
+            </Link>
           </li>
           <li className="mb-2">
-            <a href="/contacts" className="hover:text-gray-400">Emergency Contacts</a>
+            <Link href="/dashboard/contacts" legacyBehavior>
+              <a className="hover:text-gray-400">Emergency Contacts</a>
+            </Link>
           </li>
           <li className="mb-2">
-            <a href="/resources" className="hover:text-gray-400">Resources</a>
+            <Link href="/dashboard/resources" legacyBehavior>
+              <a className="hover:text-gray-400">Resources</a>
+            </Link>
           </li>
           <li className="mb-2">
-            <a href="/reports" className="hover:text-gray-400">Reports</a>
+            <Link href="/dashboard/reports" legacyBehavior>
+              <a className="hover:text-gray-400">Reports</a>
+            </Link>
           </li>
         </ul>
       </nav>
