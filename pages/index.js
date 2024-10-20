@@ -25,10 +25,8 @@ export default function Home() {
     async function fetchArticles() {
       try {
         const response = await fetch('/sampleNews.json');
-        console.log(response);
         const data = await response.json();
         setArticles(data.articles || []);
-        console.log(articles);
       } catch (error) {
         console.error('Error fetching news:', error);
       } finally {

@@ -1,17 +1,17 @@
 {
     "articles": [
-     
       {
         "source": {
           "id": "cnn",
           "name": "CNN"
         },
         "author": "Ivana Scatola",
-        "title": "Oil tanker appears to be leaking oil following Houthi attack, says Pentagon | CNN",
-        "description": "According to the Pentagon, a Greek-flagged oil tanker carrying “approximately 1 million barrels of crude oil” is leaking into the Red Sea, presenting a “navigational hazard and a potential environmental catastrophe.” Yemeni Houthi rebels targeted the vessel w…",
+        "title": "Heavy rainfall led to severe flooding in Vadodara and other parts of Gujarat.",
+        "description": " Vadodara experienced not only floods but also issues with crocodiles emerging from the swollen rivers.…",
         "url": "https://www.cnn.com/2024/08/28/world/video/oil-tanker-red-sea-houthi-attack-lon-digvid",
-        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/wide-v2-clean-00-00-06-23-still001.jpg?c=16x9&q=w_800,c_fill",
+        "urlToImage": "https://i.natgeofe.com/k/d25caf36-60a1-44c6-b078-348d78bc7772/Flash-Flood_Floods_KIDS_1022_16x9.jpg",
         "publishedAt": "2024-08-28T13:52:37.658Z",
+        "category": "flood",
         "content": "According to the Pentagon, a Greek-flagged oil tanker carrying approximately 1 million barrels of crude oil is leaking into the Red Sea, presenting a navigational hazard and a potential environmental… [+143 chars]"
       },
       {
@@ -20,11 +20,12 @@
           "name": "Reuters"
         },
         "author": "Debora Ely",
-        "title": "Brazilian family left homeless by floods finds refuge under road bridge",
+        "title": "Family left homeless by floods finds refuge under road bridge",
         "description": "Four months after devastating flooding wrecked their house in southern Brazil, Milton do Nascimento and his family still have no permanent home and are sleeping rough under a highway bridge.",
         "url": "https://www.reuters.com/world/americas/brazilian-family-left-homeless-by-floods-finds-refuge-under-road-bridge-2024-08-29/",
         "urlToImage": "https://www.reuters.com/resizer/v2/A42EN7DFWBKJJBCMDTD7VRVUOQ.jpg?auth=50e856055f344f0c56a53ea888ce5012dbfe2a097ef229b16fc008f1808d7547&height=1005&width=1920&quality=80&smart=true",
         "publishedAt": "2024-08-29T13:49:15Z",
+        "category": "flood",
         "content": null
       },
       {
@@ -38,6 +39,7 @@
         "url": "https://www.abc.net.au/news/2024-08-29/india-pakistan-floods-kill-dozens-in-gujarat-state/104288560",
         "urlToImage": "https://live-production.wcms.abc-cdn.net.au/2ba00b016f0b262047ecb708b21dd67f?impolicy=wcms_watermark_news&cropH=2810&cropW=4996&xPos=2&yPos=0&width=862&height=485&imformat=generic",
         "publishedAt": "2024-08-29T12:57:26Z",
+        "category": "flood",
         "content": "Heavy rains have battered India and Pakistan's coastal areas, flooding cities in India's Gujarat state and forcing thousands from their homes.\r\nIntense monsoon rains and floods have killed at least 2… [+1216 chars]"
       },
       {
@@ -46,13 +48,55 @@
           "name": "Time"
         },
         "author": "Associated Press",
+        "title": "Wild Week of Indian Weather Includes Heat Wave, Tropical Storm, Snow, and More",
+        "description": "Many parts of the country have faced everything from heat waves to snowstorms to flash floods.",
+        "url": "http://time.com/7015078/extreme-weather-us/",
+        "urlToImage": "https://api.time.com/wp-content/uploads/2024/08/AP24239689714794.jpg?quality=85&w=1024&h=628&crop=1",
+        "publishedAt": "2024-08-27T12:19:04Z",
+        "category": "flood",
+        "content": "FALCON HEIGHTS, Minn. It's been a wild week of weather in many parts of the United States, from heat waves to snowstorms to flash floods.\r\nHere's a look at some of the weather events:\r\nMidwest sizzle… [+3870 chars]"
+      }, {
+        "source": {
+            "id": "reuters",
+            "name": "Reuters"
+        },
+        "author": "Tim Kelly",
+        "title": "Typhoon Shanshan pounds Japan with torrential rains, severe wind",
+        "description": "Typhoon Shanshan brought torrential rain across large parts of Japan on Friday, with warnings for flooding and landslides hundreds of miles from the storm's centre, as many transport services ground to a halt and factories closed.",
+        "url": "https://www.reuters.com/world/asia-pacific/typhoon-shanshan-pounds-japan-with-torrential-rains-severe-wind-2024-08-30/",
+        "urlToImage": "https://www.reuters.com/resizer/v2/GW6NXZBHRZIEXOKHA7QGLTZR7Y.jpg?auth=3cc16ab0ee2637c087e101cd1655948d07a1dfccaf283da33a723c85069487a6&height=1005&width=1920&quality=80&smart=true",
+        "publishedAt": "2024-08-30T00:35:05Z",
+        "category":"cyclone",
+        "content": null
+    },
+    {
+        "source": {
+            "id": "abc-news",
+            "name": "ABC News"
+        },
+        "author": "Bill Hutchinson",
+        "title": "Busted waterline halts overnight lodging on Grand Canyon's South Rim ahead of busy Labor Day weekend",
+        "description": "The waterline breaks follow flash flood damage at the national park.",
+        "url": "https://abcnews.go.com/US/busted-waterline-halts-overnight-lodging-grand-canyons-south/story?id=113238353",
+        "urlToImage": "https://i.abcnewsfe.com/a/403d8964-f854-41b7-a1dd-04fc007f4f83/grand-canyon-water-ap-lv-240829_1724952460460_hpMain_16x9.jpg?w=1600",
+        "publishedAt": "2024-08-29T18:23:23Z",
+        "category": "cyclone",
+        "content": "Breaks in a 12-and-a-half-mile long water main at Grand Canyon National Park that emerged on the heels of catastrophic flash flooding have prompted officials to halt overnight lodging on the canyon's… [+2686 chars]"
+    },
+    {
+        "source": {
+            "id": "time",
+            "name": "Time"
+        },
+        "author": "Associated Press",
         "title": "Wild Week of U.S. Weather Includes Heat Wave, Tropical Storm, Snow, and More",
         "description": "Many parts of the country have faced everything from heat waves to snowstorms to flash floods.",
         "url": "http://time.com/7015078/extreme-weather-us/",
         "urlToImage": "https://api.time.com/wp-content/uploads/2024/08/AP24239689714794.jpg?quality=85&w=1024&h=628&crop=1",
         "publishedAt": "2024-08-27T12:19:04Z",
+        "category": "cyclone",
         "content": "FALCON HEIGHTS, Minn. It's been a wild week of weather in many parts of the United States, from heat waves to snowstorms to flash floods.\r\nHere's a look at some of the weather events:\r\nMidwest sizzle… [+3870 chars]"
-      }
+    }
     ]
   }
   
